@@ -1,0 +1,10 @@
+{
+  "sentiment": {
+    "service_id": "FILL_THIS_IN_STEP_7",
+    "image": "ananyachaurasia/sentiment"
+  },
+  "fraud-detection": {
+    "service_id": "FILL_THIS_IN_STEP_7",
+    "image": "ananyachaurasia/fraud-detection"
+  }
+}
