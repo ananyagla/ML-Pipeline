@@ -1,10 +1,10 @@
 {
   "sentiment": {
-    "service_id": "FILL_THIS_IN_STEP_7",
+    "service_id": "srv-d6k2hivtskes73bas1l0",
     "image": "ananyachaurasia/sentiment"
   },
   "fraud-detection": {
-    "service_id": "FILL_THIS_IN_STEP_7",
+    "service_id": "srv-d6k33ema2pns7384mg10",
     "image": "ananyachaurasia/fraud-detection"
   }
 }
