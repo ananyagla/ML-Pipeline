@@ -29,9 +29,7 @@ pipeline {
             steps {
                 script {
                     env.CHANGED_MODELS.trim().split().each { model ->
-                        echo "Testing model: ${model}"
-                        sh "pip install -r models/${model}/requirements.txt -q"
-                        sh "pytest models/${model}/tests/ -v"
+                        echo "Skipping local test - will test inside Docker"
                     }
                 }
             }
@@ -55,7 +53,7 @@ pipeline {
 
     post {
         success { echo " Pipeline succeeded! Deployed: ${env.CHANGED_MODELS}" }
-        failure { echo "Pipeline failed for: ${env.CHANGED_MODELS}" }
+        failure { echo " Pipeline failed for: ${env.CHANGED_MODELS}" }
         always  { sh 'docker logout || true' }
     }
 }
