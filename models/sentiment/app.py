@@ -4,6 +4,10 @@ import pickle, numpy as np, os
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return jsonify({"message": "Sentiment Model API is running!", "endpoints": ["/health", "/predict"]})
+
 # Load the trained model when server starts
 try:
     with open("model.pkl", "rb") as f:
