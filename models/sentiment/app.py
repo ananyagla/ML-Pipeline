@@ -4,18 +4,17 @@ from flask_cors import CORS
 import pickle, numpy as np, os
 
 app = Flask(__name__)
-CORS(app)  # ← fixes the browser blocking issue
+CORS(app)
 
 @app.route("/")
 def home():
     return jsonify({"message": "Sentiment Model API is running!", "endpoints": ["/health", "/predict"]})
 
-# Load the trained model when server starts
 try:
     with open("model.pkl", "rb") as f:
         model = pickle.load(f)
 except:
-    model = None  # will handle below
+    model = None
 
 @app.route("/health")
 def health():
@@ -34,5 +33,3 @@ def predict():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
-
