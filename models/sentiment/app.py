@@ -1,8 +1,10 @@
-# v4
+# v5
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import pickle, numpy as np, os
 
 app = Flask(__name__)
+CORS(app)  # ← fixes the browser blocking issue
 
 @app.route("/")
 def home():
@@ -32,3 +34,8 @@ def predict():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
+```
+
+**Also update `requirements.txt` — add this line:**
+```
+flask-cors
