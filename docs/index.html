@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -526,7 +527,7 @@ const RENDER_SERVICES = {
   "fraud-detection": {
     "service_id": "srv-d6k33ema2pns7384mg10",
     "image": "ananyachaurasia/fraud-detection",
-    "url": "https://fraud-detection-latest-h1ro.onrender.com"  // ✅ FIXED
+    "url": "https://fraud-detection-latest-h1ro.onrender.com"
   }
 };
 
@@ -606,8 +607,8 @@ async function predict(key, url){
     if(res.ok){
       const pred = data.prediction;
       let label  = `raw: ${JSON.stringify(pred)}`;
-      if(key==='sentiment')            label = pred[0]===1?'😊 Positive Sentiment':'😔 Negative Sentiment';
-      else if(key==='fraud-detection') label = pred[0]===1?'🚨 FRAUD DETECTED':'✅ Looks Legitimate';
+      if(key==='sentiment')             label = pred[0]===1?'😊 Positive Sentiment':'😔 Negative Sentiment';
+      else if(key==='fraud-detection')  label = pred[0]===1?'🚨 FRAUD DETECTED':'✅ Looks Legitimate';
       else if(key==='churn-prediction') label = pred[0]===1?'⚠️ Likely to Churn':'✅ Probably Staying';
       else if(key==='spam-detection')   label = pred[0]===1?'🚫 SPAM':'✅ Not Spam';
       showResult(resultEl,`✅ result: ${label}\n\nraw: ${JSON.stringify(pred)}\nmodel: ${data.model||key}\nstatus: ${res.status} OK`,'success');
