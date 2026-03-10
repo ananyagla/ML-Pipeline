@@ -1,4 +1,4 @@
-# 🤖 ML Hub — Automated MLOps Dashboard
+# 🤖 ML Hub — Automated MLOps Pipeline
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
@@ -11,8 +11,6 @@
 > Push a model. Watch it deploy. That's it.
 
 An end-to-end MLOps pipeline that automatically builds, containerizes, and deploys machine learning models whenever code is pushed to GitHub. No manual steps. No SSH. Just `git push`.
-
-**Live Dashboard →** [ananyagla.github.io/ML-Pipeline](https://ananyagla.github.io/ML-Pipeline)
 
 ---
 
@@ -34,8 +32,6 @@ An end-to-end MLOps pipeline that automatically builds, containerizes, and deplo
 <!-- Add a screenshot of your Render services page here -->
 ![Render](assets/render.png)
 
-> **To add screenshots:** create an `assets/` folder in the repo root, drop your images in, and push. The images above will appear automatically.
-
 ---
 
 ## ✨ What It Does
@@ -56,25 +52,6 @@ Zero manual intervention required.
 
 <!-- Add a diagram or screenshot of your architecture here -->
 ![Architecture](assets/architecture.png)
-
-```
-git push
-    │
-    ▼
-GitHub Webhook
-    │
-    ▼
-Jenkins CI/CD  ──►  Detect changed models
-    │
-    ▼
-Docker Build   ──►  docker build + docker push → Docker Hub
-    │
-    ▼
-Render Deploy  ──►  Trigger redeploy via Render API
-    │
-    ▼
-GitHub Pages   ──►  Live dashboard shows updated status
-```
 
 ---
 
