@@ -5,7 +5,15 @@ RENDER_API_KEY=$1
 BUILD_NUM=$2
 
 echo "=== Detecting changed models ==="
+
+# Detect modified files
 CHANGED=$(git diff --name-only HEAD~1 HEAD | grep '^models/' | cut -d/ -f2 | sort -u)
+
+# Detect newly added folders
+NEW=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep '^models/' | cut -d/ -f2 | sort -u)
+
+# Combine both
+CHANGED=$(echo -e "$CHANGED\n$NEW" | sort -u | sed '/^$/d' | tr '\n' ' ' | xargs)
 
 if [ -z "$CHANGED" ]; then
   echo "No model changes detected. Skipping deploy."
