@@ -613,7 +613,9 @@ async function predict(key, url){
       const pred = data.prediction;
       let label  = `raw: ${JSON.stringify(pred)}`;
       if(key==='sentiment')             label = pred[0]===1?'😊 Positive Sentiment':'😔 Negative Sentiment';
+      
       else if(key==='fraud-detection')  label = pred[0]===1?'🚨 FRAUD DETECTED':'✅ Looks Legitimate';
+      else if(key==='house-price')      label = pred[0]===1?'🏠 Expensive House':'🏚️ Cheap House';
       else if(key==='churn-prediction') label = pred[0]===1?'⚠️ Likely to Churn':'✅ Probably Staying';
       else if(key==='spam-detection')   label = pred[0]===1?'🚫 SPAM':'✅ Not Spam';
       showResult(resultEl,`✅ result: ${label}\n\nraw: ${JSON.stringify(pred)}\nmodel: ${data.model||key}\nstatus: ${res.status} OK`,'success');
