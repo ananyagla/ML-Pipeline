@@ -6,5 +6,9 @@
   "fraud-detection": {
     "service_id": "srv-d6k33ema2pns7384mg10",
     "image": "ananyachaurasia/fraud-detection"
+  },
+  "house-price": {
+    "service_id": "srv-YOUR-RENDER-ID-HERE",
+    "image": "ananyachaurasia/house-price"
   }
 }
