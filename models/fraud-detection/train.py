@@ -1,6 +1,8 @@
-#v4-updated train.py
+# v5-updated train.py
 
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 import numpy as np, pickle
 
 # Features: [transaction_amount, time_of_day, distance_from_home, frequency, foreign_transaction]
@@ -18,9 +20,21 @@ X = np.array([
 ])
 y = np.array([0, 0, 0, 0, 0, 1, 1, 1, 1, 1])  # 0=legitimate, 1=fraud
 
-model = RandomForestClassifier()
-model.fit(X, y)
+# Train test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
 
+# Train model
+model = RandomForestClassifier()
+model.fit(X_train, y_train)
+
+# Calculate accuracy
+y_pred = model.predict(X_test)
+accuracy = accuracy_score(y_test, y_pred)
+print(f"✅ Accuracy: {accuracy * 100:.1f}%")
+
+# Save model
 with open("model.pkl", "wb") as f:
     pickle.dump(model, f)
 
