@@ -66,17 +66,17 @@ Zero manual intervention required.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠 Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| CI/CD | Jenkins |
-| Containerization | Docker + Docker Hub |
-| Hosting | Render (free tier) |
-| Frontend | GitHub Pages |
-| ML Framework | Scikit-Learn |
-| API | Flask + Gunicorn |
-| Language | Python 3.11 |
+| Category         | Tools & Technologies                          |
+|------------------|-----------------------------------------------|
+| CI/CD Pipeline   | Jenkins                                       |
+| Containerization | Docker, Docker Hub                            |
+| Deployment       | Render (Backend), GitHub Pages (Frontend)     |
+| Frontend         | HTML5, CSS3, JavaScript (Vanilla JS)          |
+| Backend API      | Python (Flask, Gunicorn)                      |
+| Machine Learning | Scikit-learn                                  |
+| Runtime          | Python 3.11                                   |
 
 ---
 
